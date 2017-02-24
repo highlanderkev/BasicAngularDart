@@ -3,7 +3,7 @@
 
 import 'package:angular2/core.dart';
 
-import 'card.dart';
+import 'package:BasicAngularDart/card.dart';
 
-@Component(selector: 'my-app', directives: [CardComponent], templateUrl: 'app.html')
+@Component(selector: 'my-app', directives: const[CardComponent], templateUrl: 'app.html')
 class AppComponent {}
