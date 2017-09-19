@@ -1,0 +1,22 @@
+<h2>My Posts</h2>
+<div>
+  <label>Post title:</label> <input #postTitle />
+  <button (click)="add(postTitle.value); postTitle.value=''">
+    Add
+  </button>
+</div>
+<ul class="posts">
+  <li *ngFor="let post of posts" (click)="onSelect(post)"
+      [class.selected]="post === selectedPost">
+    <span class="badge">{{post.id}}</span>
+    <span>{{post.title}}</span>
+    <button class="delete"
+      (click)="delete(post); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedPost != null">
+  <h2>
+    {{selectedPost.title | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
